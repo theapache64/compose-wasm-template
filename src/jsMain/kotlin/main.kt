@@ -43,8 +43,6 @@ fun main() {
                     }
                 }
 
-                // Powered by
-                Text("Powered by Compose WASM (WebAssembly)")
             }
         }
     }
