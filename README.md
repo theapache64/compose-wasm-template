@@ -1,9 +1,9 @@
 ![](cover.jpeg)
 
-# compose-web-template
+# compose-wasm-template
 
-![buildStatus](https://img.shields.io/github/workflow/status/theapache64/compose-web-template/Java%20CI%20with%20Gradle?style=plastic)
-![latestVersion](https://img.shields.io/github/v/release/theapache64/compose-web-template)
+![buildStatus](https://img.shields.io/github/workflow/status/theapache64/compose-wasm-template/Java%20CI%20with%20Gradle?style=plastic)
+![latestVersion](https://img.shields.io/github/v/release/theapache64/compose-wasm-template)
 <a href="https://twitter.com/theapache64" target="_blank">
 <img alt="Twitter: theapache64" src="https://img.shields.io/twitter/follow/theapache64.svg?style=social" />
 </a>

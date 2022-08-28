@@ -1,33 +1,50 @@
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.material.Button
+import androidx.compose.material.Text
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import org.jetbrains.compose.web.css.padding
-import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.dom.Button
-import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.Span
-import org.jetbrains.compose.web.dom.Text
-import org.jetbrains.compose.web.renderComposable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Window
+import org.jetbrains.skiko.wasm.onWasmReady
 
 fun main() {
-    var count by mutableStateOf(0)
+    onWasmReady {
+        Window(title = "Compose Wasm Template") {
+            var count by remember { mutableStateOf(0) }
+            Column {
 
-    renderComposable(rootElementId = "root") {
-        Div({ style { padding(25.px) } }) {
-            Button(attrs = {
-                onClick { count -= 1 }
-            }) {
-                Text("-")
-            }
+                // Content
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(10.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Button(
+                        onClick = {
+                            count--
+                        }
+                    ) {
+                        Text("-")
+                    }
 
-            Span({ style { padding(15.px) } }) {
-                Text("$count")
-            }
+                    Text("Count is $count", fontSize = 30.sp)
 
-            Button(attrs = {
-                onClick { count += 1 }
-            }) {
-                Text("+")
+                    Button(
+                        onClick = {
+                            count++
+                        }
+                    ) {
+                        Text("+")
+                    }
+                }
+
+                // Powered by
+                Text("Powered by Compose WASM (WebAssembly)")
             }
         }
     }
