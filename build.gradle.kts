@@ -25,6 +25,7 @@ kotlin {
                 implementation(compose.foundation)
                 implementation(compose.material)
                 implementation(compose.runtime)
+                implementation("io.github.theapache64:rebugger:1.0.0-rc03")
             }
         }
     }

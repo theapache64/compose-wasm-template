@@ -12,6 +12,7 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.CanvasBasedWindow
+import com.theapache64.rebugger.Rebugger
 import org.jetbrains.skiko.wasm.onWasmReady
 
 @OptIn(ExperimentalComposeUiApi::class)
@@ -19,6 +20,12 @@ fun main() {
     onWasmReady {
         CanvasBasedWindow(title = "Compose Wasm Template") {
             var count by remember { mutableStateOf(0) }
+
+            Rebugger(
+                trackMap = mapOf(
+                    "count" to count
+                )
+            )
             Column {
 
                 // Content
